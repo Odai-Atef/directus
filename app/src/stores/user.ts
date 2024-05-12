@@ -12,6 +12,7 @@ type ShareUser = {
 		admin_access: false;
 		app_access: false;
 	};
+	branch: number;
 };
 
 export const useUserStore = defineStore({
@@ -33,6 +34,7 @@ export const useUserStore = defineStore({
 	actions: {
 		async hydrate() {
 			this.loading = true;
+			this.branch=9;
 
 			try {
 				const fields = ['*', 'avatar.id', 'role.admin_access', 'role.app_access', 'role.id', 'role.enforce_tfa'];

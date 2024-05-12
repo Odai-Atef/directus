@@ -17,6 +17,7 @@ export function parseFilter(filter: Filter | null): Filter {
 		parseFilterShared(filter, accountability, {
 			$CURRENT_ROLE: currentUser.role,
 			$CURRENT_USER: currentUser,
+			$CURRENT_BRANCH: currentUser.branch,
 		}) ?? {}
 	);
 }
